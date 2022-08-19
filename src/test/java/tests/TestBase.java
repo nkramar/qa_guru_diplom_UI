@@ -1,6 +1,7 @@
 package tests;
 
 
+import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import config.Project;
@@ -24,7 +25,6 @@ import static io.qameta.allure.Allure.step;
 public class TestBase {
 
   NavigationPanel navigationPanel = new NavigationPanel();
-  public final String BASE_URL = "https://www.t1-consulting.ru";
 
   @BeforeAll
   static void beforeAll() {
@@ -34,7 +34,7 @@ public class TestBase {
 
   @BeforeEach
   public void openMainPage() {
-    step("Открываем главную страницу сайта", () -> open(BASE_URL));
+    step("Открываем главную страницу сайта", () -> open(Configuration.baseUrl));
   }
 
   @AfterEach
