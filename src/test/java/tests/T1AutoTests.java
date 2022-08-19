@@ -67,7 +67,6 @@ public class T1AutoTests extends TestBase {
     return Stream.of(
             Arguments.of("О компании", "О компании"),
             Arguments.of("Услуги", "Услуги"),
-            Arguments.of("Карта решений", "Карта решений"),
             Arguments.of("Продукты", "Продукты"),
             Arguments.of("Контакты", "Контакты"));
   }
