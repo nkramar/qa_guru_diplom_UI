@@ -1,11 +1,11 @@
 package tests;
 
 
-import helpers.DriverUtils;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
 import io.qameta.allure.Story;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -17,8 +17,7 @@ import java.util.stream.Stream;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byLinkText;
 import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.title;
+import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -27,6 +26,7 @@ public class T1AutoTests extends TestBase {
 
 
   @Test
+  @Tag("smoke")
   @Owner("nkramar")
   @Feature("Титульное название страницы")
   @Story("Веб адрес страницы")
@@ -56,7 +56,7 @@ public class T1AutoTests extends TestBase {
   @DisplayName("Проверка лога консоли страницы на наличие ошибок")
   void consoleShouldNotHaveErrorsTest() {
     step("Проверить, что лог консоли не содержит текст: 'SEVERE'", () -> {
-      String consoleLogs = DriverUtils.getConsoleLogs();
+      String consoleLogs = getConsoleLogs();
       String errorText = "SEVERE";
       assertThat(consoleLogs).doesNotContain(errorText);
     });
@@ -101,7 +101,6 @@ public class T1AutoTests extends TestBase {
   @ParameterizedTest(name = "{0}")
   @DisplayName("Переход на страницу c услугой: ")
   void checkHeaderTextOnServicesPages(String menuItem, String pageHeader) {
-
     step("Наводим мышку на элемент навигационной панели 'Услуги'",
             () -> navigationPanel.navigationPanelHeader.$(byText("Услуги")).hover());
 
