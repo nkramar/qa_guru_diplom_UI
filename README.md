@@ -112,7 +112,7 @@ ___
 
 ___
 
-## <img src="images/Jira.svg" width="25" height="25"  alt="Allure"/></a>*Интеграция с* <a target="_blank" href="https://https://jira.autotests.cloud/browse/AUTO-1313">Jira</a>
+## <img src="images/Jira.svg" width="25" height="25"  alt="Allure"/></a>*Интеграция с* <a target="_blank" href="https://jira.autotests.cloud/browse/AUTO-1313">Jira</a>
 
 <p align="center">  
 <img title="Jira" src="images/Jira_Ticket.png">  
