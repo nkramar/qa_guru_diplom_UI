@@ -73,7 +73,7 @@ clean test
 -Dhost=remote
 ```
 
-## <img src="images/Allure_Report.svg" width="25" height="25"  alt="Allure"/></a> *Allure* <a target="_blank" href="https://jenkins.autotests.cloud/job/qa_guru_diplom_UI_tests/14/allure/">*отчёт*</a>
+## <img src="images/Allure_Report.svg" width="25" height="25"  alt="Allure"/></a> *Allure* <a target="_blank" href="https://jenkins.autotests.cloud/job/qa_guru_diplom_UI_tests/">*отчёт*</a>
 ___
 
 ### *Основная страница отчёта*
@@ -96,7 +96,7 @@ ___
 
 ___
 
-## <img src="images/AllureTestOps.svg" width="25" height="25"  alt="Allure"/></a>*Интеграция с* <a target="_blank" href="https://allure.autotests.cloud/project/1430/dashboards">*Allure TestOps*</a>
+## <img src="images/AllureTestOps.svg" width="25" height="25"  alt="Allure"/></a>*Интеграция с* <a target="_blank" href="https://allure.autotests.cloud/launch/15392/tree?treeId=0">*Allure TestOps*</a>
 
 ## *Allure TestOps Dashboard*
 
@@ -129,7 +129,7 @@ ____
 ## <img src="images/Selenoid.svg" width="25" height="25"  alt="Selenoid"/></a> *Примеры видео выполнения тестов на Selenoid*
 
 
-
+<p align="center"> 
 <img title="Selenoid Video" src="images/Selenoid_Video.gif" width="650" height="350"  alt="video">   
-
+</p>
 
