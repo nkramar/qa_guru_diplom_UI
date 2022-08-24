@@ -7,18 +7,21 @@
 
 
 ### :green_book: *Содержание*
-- *Технологии и инструменты*
-- *Примеры автоматизированных тест кейсов*
-- *Сборка в Jenkins*
-- *Команды для запуска из терминала*
-- *Allure отчёт*
-- *Интреграция с Allure TestOps*
-- *Интеграция с Jira*
-- *Уведомление в Telegram при помощи Alert bot*
-- *Примеры видео выполнения тестов на Selenoid*
-____
 
-## :computer: *Технологии и инструменты*
++ [Технологии и инструменты](#Technology)
++ [Примеры автоматизированных тест кейсов](#TestCases)
++ [Запуск тестов в Jenkins](#Jenkins)
++ [Команды для запуска из терминала](#SystemProperty)
++ [Отчет о результатах тестирования в Allure Report](#AllureReport)
++ [Интеграция с Allure TestOps](#AllureTestOps)
++ [Интеграция с Jira](#Jira)
++ [Уведомление в Telegram при помощи Alert bot](#Telegram)
++ [Примеры видео выполнения тестов на Selenoid](#Selenoid)
+
+
+<h1 align="left">
+<a name="Technology"><i>Технологии и инструменты</i></a>
+</h1>
 
 <p align="center">  
 <a href="https://www.jetbrains.com/idea/"><img src="images/Intelij_IDEA.svg" width="50" height="50"  alt="IDEA"/></a>  
@@ -34,9 +37,11 @@ ____
 <a href="https://www.atlassian.com/ru/software/jira/"><img src="images/Jira.svg" width="50" height="50"  alt="Jira"/></a>  
 </p>
 
-____
 
-## *Примеры автоматизированных тест кейсов*
+<h1 align="left">
+<a name="TestCases"><i>Примеры автоматизированных тест кейсов</i></a>
+</h1>
+
 - :white_check_mark: Проверка названия страницы
 - :white_check_mark: Проверка видимости текстовых элементов в навигационной панели страницы
 - :white_check_mark: Проверка лога консоли страницы на наличие ошибок
@@ -44,12 +49,12 @@ ____
 - :white_check_mark: Проверка навигации по страницам с предоставляемыми услугами
 
 
-____
-
-## <img src="images/Jenkins.svg" width="25" height="25"  alt="Jenkins"/></a> Jenkins job
-<a target="_blank" href="https://jenkins.autotests.cloud/job/qa_guru_diplom_UI_tests/">**Сборка в Jenkins**</a>
+<h1 align="left">
+<img src="images/Jenkins.svg" width="25" height="25" alt="Jenkins"/>  <a name="Jenkins"><i>Запуск тестов в Jenkins</i></a>
+</h1>
+<a target="_blank" href="https://jenkins.autotests.cloud/job/qa_guru_diplom_UI_tests/">Сборка в Jenkins</a>
 <p align="center">  
-<a href="https://jenkins.autotests.cloud/job/qa_guru_diplom_UI_tests/"><img src="images/JenkinsJob.png" alt="Jenkins"/></a>  
+<a href="https://jenkins.autotests.cloud/job/qa_guru_diplom_Mobile_tests/"><img src="images/JenkinsJob.png" alt="Jenkins"/></a>  
 </p>
 
 
@@ -61,7 +66,6 @@ ____
 - *HOST (адрес удаленного сервера Selenoid с логином и паролем)*
 
 
-____
 ## :keyboard: *Команды для запуска из терминала*
 
 ***Локальный запуск:***
@@ -79,7 +83,6 @@ clean test
 ```
 
 ## <img src="images/Allure_Report.svg" width="25" height="25"  alt="Allure"/></a> *Allure* <a target="_blank" href="https://jenkins.autotests.cloud/job/qa_guru_diplom_UI_tests/">*отчёт*</a>
-___
 
 ### *Основная страница отчёта*
 
@@ -99,7 +102,6 @@ ___
 <img title="Allure Graphics" src="images/Allure_Charts.png">  
 </p>
 
-___
 
 ## <img src="images/AllureTestOps.svg" width="25" height="25"  alt="Allure"/></a>*Интеграция с* <a target="_blank" href="https://allure.autotests.cloud/launch/15392/tree?treeId=0">*Allure TestOps*</a>
 
@@ -115,7 +117,6 @@ ___
 <img title="Allure TestOps Tests" src="images/Allure_TestOps_Test_Cases.png">  
 </p>
 
-___
 
 ## <img src="images/Jira.svg" width="25" height="25"  alt="Allure"/></a>*Интеграция с* <a target="_blank" href="https://jira.autotests.cloud/browse/AUTO-1313">Jira</a>
 
@@ -123,7 +124,6 @@ ___
 <img title="Jira" src="images/Jira_Ticket.png">  
 </p>
 
-____
 ## <img src="images/Telegram.svg" width="25" height="25"  alt="Allure"/></a> *Уведомление в Telegram при помощи Alert bot*
 
 <p align="center">  
