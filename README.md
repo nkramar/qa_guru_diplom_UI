@@ -52,21 +52,25 @@
 <h1 align="left">
 <img src="images/Jenkins.svg" width="25" height="25" alt="Jenkins"/>  <a name="Jenkins"><i>Запуск тестов в Jenkins</i></a>
 </h1>
-<a target="_blank" href="https://jenkins.autotests.cloud/job/qa_guru_diplom_UI_tests/">Сборка в Jenkins</a>
+
+<a target="_blank" href="https://jenkins.autotests.cloud/job/qa_guru_diplom_UI_tests/">**Сборка в Jenkins**</a>
 <p align="center">  
 <a href="https://jenkins.autotests.cloud/job/qa_guru_diplom_Mobile_tests/"><img src="images/JenkinsJob.png" alt="Jenkins"/></a>  
 </p>
 
 
-### *Параметры сборки в Jenkins:*
+
+
+# *Параметры сборки в Jenkins:*
 
 - *BROWSER (браузер, по умолчанию chrome)*
 - *BROWSER_VERSION (версия браузера, по умолчанию 100.0)*
 - *BROWSER_SIZE (размер окна браузера, по умолчанию 1920x1080)*
 - *HOST (адрес удаленного сервера Selenoid с логином и паролем)*
 
-
-## :keyboard: *Команды для запуска из терминала*
+<h1 align="left">
+<a name="SystemProperty"><i>Команды для запуска из терминала</i></a>
+</h1>
 
 ***Локальный запуск:***
 ```bash  
@@ -82,7 +86,13 @@ clean test
 -Dhost=remote
 ```
 
-## <img src="images/Allure_Report.svg" width="25" height="25"  alt="Allure"/></a> *Allure* <a target="_blank" href="https://jenkins.autotests.cloud/job/qa_guru_diplom_UI_tests/">*отчёт*</a>
+<h1 align="left">
+<img src="images/Allure_Report.svg" width="25" height="25" alt="Allure_Report"/>  <a name="AllureReport"><i>Отчет о результатах тестирования в Allure Report</i></a>
+</h1>
+
+<a target="_blank" href="https://jenkins.autotests.cloud/job/qa_guru_diplom_UI_tests">**Отчёт в Jenkins**</a>
+<p align="center"> 
+
 
 ### *Основная страница отчёта*
 
@@ -103,13 +113,19 @@ clean test
 </p>
 
 
-## <img src="images/AllureTestOps.svg" width="25" height="25"  alt="Allure"/></a>*Интеграция с* <a target="_blank" href="https://allure.autotests.cloud/launch/15392/tree?treeId=0">*Allure TestOps*</a>
+<h1 align="left">
+<img src="images/AllureTestOps.svg" width="25" height="25" alt="AllureTestOps"/> <a name="AllureTestOps"><i>Интеграция с Allure TestOps</i></a>
+</h1>
+
+<a target="_blank" href="https://allure.autotests.cloud/launch/15392/tree?treeId=0">**Проект в TestOps**</a>
+<p align="center">  
+
 
 ## *Allure TestOps Dashboard*
 
 <p align="center">  
 <img title="Allure TestOps Dashboard" src="images/Allure_Test_Ops_Dashboard.png">  
-</p>  
+</p> 
 
 ## *Тест кейсы*
 
@@ -117,24 +133,31 @@ clean test
 <img title="Allure TestOps Tests" src="images/Allure_TestOps_Test_Cases.png">  
 </p>
 
+<h1 align="left">
+<img src="images/Jira.svg" width="25" height="25" alt="Jira"/> <a name="Jira"><i>Интеграция с Jira</i></a>
+</h1>
 
-## <img src="images/Jira.svg" width="25" height="25"  alt="Allure"/></a>*Интеграция с* <a target="_blank" href="https://jira.autotests.cloud/browse/AUTO-1313">Jira</a>
+<a target="_blank" href="https://jira.autotests.cloud/browse/AUTO-1313">**Тикет в Jira**</a>
+<p align="center">  
+
 
 <p align="center">  
 <img title="Jira" src="images/Jira_Ticket.png">  
 </p>
 
-## <img src="images/Telegram.svg" width="25" height="25"  alt="Allure"/></a> *Уведомление в Telegram при помощи Alert bot*
+<h1 align="left">
+<img src="images/Telegram.svg" width="25" height="25"  alt="Allure"/> <a name="Telegram"><i>Уведомление в Telegram при помощи Alert bot</i></a>
+</h1>
 
 <p align="center">  
-<img title="Allure Overview Dashboard" src="images/Telegram_bot.png">  
+<img title="Telegram notification" src="images/Telegram_bot.png">  
 </p>
 
 
-## <img src="images/Selenoid.svg" width="25" height="25"  alt="Selenoid"/></a> *Примеры видео выполнения тестов на Selenoid*
-
+<h1 align="left">
+<img src="images/Selenoid.svg" width="25" height="25" alt="Selenoid"/> <a name="Selenoid"><i>Примеры видео выполнения тестов на Selenoid</i></a>
+</h1>
 
 <p align="center"> 
-<img title="Selenoid Video" src="images/Selenoid_Video.gif" width="850" height="550"  alt="video">   
+<img title="Browserstack Video" src="images/Selenoid_Video.gif" width="850" height="550"  alt="video">   
 </p>
-
