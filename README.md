@@ -164,4 +164,4 @@ clean test
 <img title="Browserstack Video" src="images/Selenoid_Video.gif" width="850" height="550"  alt="video">   
 </p>
 
-[К содержанию ⬆](#содержание)
+[Наверх ⬆](#содержание)
