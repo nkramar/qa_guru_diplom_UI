@@ -72,8 +72,7 @@ public class T1AutoTests extends TestBase {
   @Feature("Навигационная панель")
   @Story("Кликабельность элементов навигационной панели")
   @MethodSource("checkPageHeader")
-  @DisplayName("Проверка кликабельности элемента страницы:")
-  @ParameterizedTest(name = "{0}")
+  @ParameterizedTest(name = "Проверка кликабельности элемента страницы: {0}")
   void checkHeaderTextOnMainPages(String menuItem, String pageHeaderText) {
     step("Кликаем по элементу навигационной панели",
             () -> navigationPanel.clickOnNavigationPanelElements(menuItem));
@@ -95,8 +94,7 @@ public class T1AutoTests extends TestBase {
           "Аналитика, Аналитика",
           "BigData,BigData"
   })
-  @ParameterizedTest(name = "{0}")
-  @DisplayName("Переход на страницу c услугой: ")
+  @ParameterizedTest( name = "Переход на страницу c услугой: {0}")
   void checkHeaderTextOnServicesPages(String menuItem, String pageHeader) {
     step("Наводим мышку на элемент навигационной панели 'Услуги'",
             () -> navigationPanel.navigationPanelHeader.$(byText("Услуги")).hover());
