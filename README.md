@@ -87,7 +87,7 @@ clean test
 ```
 
 <h1 align="left">
-<img src="images/Allure_Report.svg" width="25" height="25" alt="Allure_Report"/>  <a name="AllureReport"><i>Отчет о результатах тестирования в Allure Report</i></a>
+<img src="images/Allure_Report.svg" width="25" height="25" alt="Allure_Report"/>  <a name="AllureReport"><i>Отчет в Allure Report</i></a>
 </h1>
 
 <a target="_blank" href="https://jenkins.autotests.cloud/job/qa_guru_diplom_UI_tests">**Отчёт в Jenkins**</a>
