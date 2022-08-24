@@ -4,7 +4,7 @@ package tests;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
-import config.LaunchConfig;
+import config.HostConfig;
 import helpers.AllureAttachments;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.aeonbits.owner.ConfigFactory;
@@ -24,9 +24,9 @@ public class TestBase {
 
   NavigationPanel navigationPanel = new NavigationPanel();
 
-  static LaunchConfig launchConfig = ConfigFactory.create(LaunchConfig.class, System.getProperties());
+  static HostConfig hostConfig = ConfigFactory.create(HostConfig.class, System.getProperties());
 
-  static String baseUrl = launchConfig.getBaseUrl();
+  static String baseUrl = hostConfig.getBaseUrl();
 
   public static String getConsoleLogs() {
     return String.join("\n", Selenide.getWebDriverLogs(BROWSER));
@@ -36,10 +36,10 @@ public class TestBase {
   @BeforeAll
   static void configure() {
     System.getProperty("host", "remote");
-    Configuration.remote = launchConfig.getRemoteUrl();
-    Configuration.browser = launchConfig.getBrowser();
-    Configuration.browserSize = launchConfig.getBrowserSize();
-    Configuration.browserVersion = launchConfig.getBrowserVersion();
+    Configuration.remote = hostConfig.getRemoteUrl();
+    Configuration.browser = hostConfig.getBrowser();
+    Configuration.browserSize = hostConfig.getBrowserSize();
+    Configuration.browserVersion = hostConfig.getBrowserVersion();
     Configuration.baseUrl = baseUrl;
 
     SelenideLogger.addListener("Allure Selenide", new AllureSelenide());

@@ -6,7 +6,7 @@ import org.aeonbits.owner.Config;
         "classpath:properties/${host}.properties"
 })
 
-public interface LaunchConfig extends Config {
+public interface HostConfig extends Config {
 
     @Key("baseUrl")
     @DefaultValue("https://www.t1-consulting.ru")
