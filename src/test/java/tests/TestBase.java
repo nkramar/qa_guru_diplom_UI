@@ -1,6 +1,5 @@
 package tests;
 
-
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
@@ -27,6 +26,7 @@ public class TestBase {
   NavigationPanel navigationPanel = new NavigationPanel();
 
   static HostConfig hostConfig = ConfigFactory.create(HostConfig.class, System.getProperties());
+
   static String baseUrl = hostConfig.getBaseUrl();
 
   public static String getConsoleLogs() {
@@ -36,15 +36,19 @@ public class TestBase {
 
   @BeforeAll
   static void configure() {
-
+    System.getProperty("host", "remote");
+    Configuration.remote = hostConfig.getRemoteUrl();
     Configuration.browser = hostConfig.getBrowser();
     Configuration.browserSize = hostConfig.getBrowserSize();
     Configuration.browserVersion = hostConfig.getBrowserVersion();
     Configuration.baseUrl = baseUrl;
-    if (!System.getProperty("remoteUrl", "false").isEmpty()) {
-      setRemoteWebdriver();
-    }
+
     SelenideLogger.addListener("Allure Selenide", new AllureSelenide());
+
+    DesiredCapabilities capabilities = new DesiredCapabilities();
+    capabilities.setCapability("enableVNC", true);
+    capabilities.setCapability("enableVideo", true);
+    Configuration.browserCapabilities = capabilities;
   }
 
   @BeforeEach
@@ -62,16 +66,6 @@ public class TestBase {
   }
 
   @AfterAll
-  static void close() {
-    closeWebDriver();
-  }
-
-  static void setRemoteWebdriver() {
-    DesiredCapabilities capabilities = new DesiredCapabilities();
-    capabilities.setCapability("enableVNC", true);
-    capabilities.setCapability("enableVideo", true);
-    Configuration.browserCapabilities = capabilities;
-    Configuration.remote = hostConfig.getRemoteUrl();
-  }
+  static void close() { closeWebDriver(); }
 }
 
