@@ -36,19 +36,16 @@ public class TestBase {
 
   @BeforeAll
   static void configure() {
-    System.getProperty("host", "remote");
-    Configuration.remote = hostConfig.getRemoteUrl();
+    System.getProperty("host", "local");
     Configuration.browser = hostConfig.getBrowser();
     Configuration.browserSize = hostConfig.getBrowserSize();
     Configuration.browserVersion = hostConfig.getBrowserVersion();
     Configuration.baseUrl = baseUrl;
-
+    if (!System.getProperty("remoteUrl", "false").isEmpty()) {
+      setRemoteWebdriver();
+    }
     SelenideLogger.addListener("Allure Selenide", new AllureSelenide());
 
-    DesiredCapabilities capabilities = new DesiredCapabilities();
-    capabilities.setCapability("enableVNC", true);
-    capabilities.setCapability("enableVideo", true);
-    Configuration.browserCapabilities = capabilities;
   }
 
   @BeforeEach
@@ -66,6 +63,17 @@ public class TestBase {
   }
 
   @AfterAll
-  static void close() { closeWebDriver(); }
+  static void close() {
+    closeWebDriver();
+  }
+
+  static void setRemoteWebdriver() {
+    DesiredCapabilities capabilities = new DesiredCapabilities();
+    capabilities.setCapability("enableVNC", true);
+    capabilities.setCapability("enableVideo", true);
+    Configuration.browserCapabilities = capabilities;
+    Configuration.remote = hostConfig.getRemoteUrl();
+
+  }
 }
 
