@@ -86,8 +86,9 @@ gradle clean test
 ***Удалённый запуск через Jenkins:***
 ```bash  
 clean test
--Dbrowser=${BROWSER}
--DbrowserSize=${SIZE}
+-Dbrowser=${BROWSER_NAME}
+-DbrowserSize=${BROWSER_SIZE}
+-DbrowserVersion=${BROWSER_VERSION}
 -Dhost=remote
 ```
 
