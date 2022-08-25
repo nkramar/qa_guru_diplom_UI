@@ -3,7 +3,7 @@ package config;
 import org.aeonbits.owner.Config;
 
 @Config.Sources({
-        "classpath:properties/${host}.properties"
+        "classpath:${host}.properties"
 })
 
 public interface HostConfig extends Config {

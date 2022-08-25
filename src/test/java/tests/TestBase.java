@@ -14,6 +14,8 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import pages.NavigationPanel;
+
+
 import static com.codeborne.selenide.Selenide.closeWebDriver;
 import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
@@ -25,7 +27,6 @@ public class TestBase {
   NavigationPanel navigationPanel = new NavigationPanel();
 
   static HostConfig hostConfig = ConfigFactory.create(HostConfig.class, System.getProperties());
-
   static String baseUrl = hostConfig.getBaseUrl();
 
   public static String getConsoleLogs() {
@@ -35,19 +36,15 @@ public class TestBase {
 
   @BeforeAll
   static void configure() {
-    System.getProperty("host", "remote");
-    Configuration.remote = hostConfig.getRemoteUrl();
+
     Configuration.browser = hostConfig.getBrowser();
     Configuration.browserSize = hostConfig.getBrowserSize();
     Configuration.browserVersion = hostConfig.getBrowserVersion();
     Configuration.baseUrl = baseUrl;
-
+    if (!System.getProperty("remoteUrl", "false").isEmpty()) {
+      setRemoteWebdriver();
+    }
     SelenideLogger.addListener("Allure Selenide", new AllureSelenide());
-
-    DesiredCapabilities capabilities = new DesiredCapabilities();
-    capabilities.setCapability("enableVNC", true);
-    capabilities.setCapability("enableVideo", true);
-    Configuration.browserCapabilities = capabilities;
   }
 
   @BeforeEach
@@ -65,7 +62,16 @@ public class TestBase {
   }
 
   @AfterAll
-  static void close() { closeWebDriver(); }
+  static void close() {
+    closeWebDriver();
+  }
 
+  static void setRemoteWebdriver() {
+    DesiredCapabilities capabilities = new DesiredCapabilities();
+    capabilities.setCapability("enableVNC", true);
+    capabilities.setCapability("enableVideo", true);
+    Configuration.browserCapabilities = capabilities;
+    Configuration.remote = hostConfig.getRemoteUrl();
+  }
 }
 
