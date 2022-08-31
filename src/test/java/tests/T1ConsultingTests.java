@@ -19,7 +19,7 @@ import static io.qameta.allure.Allure.step;
 import static org.assertj.core.api.Assertions.assertThat;
 
 
-public class T1AutoTests extends TestBase {
+public class T1ConsultingTests extends TestBase {
 
 
   @Test
