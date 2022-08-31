@@ -6,14 +6,12 @@ import static com.codeborne.selenide.Condition.exactText;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 
-
 public class NavigationPanel {
 
   public SelenideElement navigationPanelHeader = $(".header");
-  public final String navigationPanelHeaderTexts = "О компании Услуги\n" +
-          "Продукты\n" + "Контакты\n" + "+7 495 981-92-92\n" + "Обратная связь";
 
-
+  public final String navigationPanelHeaderTexts =
+          "О компании Услуги Продукты Контакты +7 495 981-92-92 Обратная связь";
 
   public void checkNavigationPanelHeaderTexts(String value) {
 
@@ -26,6 +24,6 @@ public class NavigationPanel {
   }
 
   public void hoverNavigationPanelElement(String value) {
-    navigationPanelHeader.$(byText(value)).hover(); }
-
+    navigationPanelHeader.$(byText(value)).hover();
+  }
 }

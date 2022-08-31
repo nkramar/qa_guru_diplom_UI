@@ -29,23 +29,18 @@ public class TestBase {
 
   static String baseUrl = hostConfig.getBaseUrl();
 
-  public static String getConsoleLogs() {
-    return String.join("\n", Selenide.getWebDriverLogs(BROWSER));
-  }
-
 
   @BeforeAll
   static void configure() {
-    System.getProperty("host", "local");
     Configuration.browser = hostConfig.getBrowser();
     Configuration.browserSize = hostConfig.getBrowserSize();
     Configuration.browserVersion = hostConfig.getBrowserVersion();
     Configuration.baseUrl = baseUrl;
+
     if (!System.getProperty("remoteUrl", "false").isEmpty()) {
       setRemoteWebdriver();
     }
     SelenideLogger.addListener("Allure Selenide", new AllureSelenide());
-
   }
 
   @BeforeEach
@@ -73,7 +68,11 @@ public class TestBase {
     capabilities.setCapability("enableVideo", true);
     Configuration.browserCapabilities = capabilities;
     Configuration.remote = hostConfig.getRemoteUrl();
+  }
 
+  public static String getConsoleLogs() {
+
+    return String.join("\n", Selenide.getWebDriverLogs(BROWSER));
   }
 }
 

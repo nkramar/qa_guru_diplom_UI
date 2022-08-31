@@ -10,18 +10,14 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.MethodSource;
-
 import java.util.stream.Stream;
-
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byLinkText;
 import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 import static org.assertj.core.api.Assertions.assertThat;
 
-
-public class T1ConsultingTests extends TestBase {
-
+public class UIFunctionalityTests extends TestBase {
 
   @Test
   @Tag("smoke")
@@ -43,8 +39,8 @@ public class T1ConsultingTests extends TestBase {
   @Story("Видимость текстовых элементов в навигационной панели")
   @DisplayName("Проверка видимости элементов в навигационной панели")
   void checkAvailabilityOfHeaderElementsTest() {
-    step("Проверить, что в навигационной панели отображаются текстовые элементы",
-            () -> navigationPanel.checkNavigationPanelHeaderTexts(navigationPanel.navigationPanelHeaderTexts));
+    step("Проверить, что в навигационной панели отображаются текстовые элементы", ()
+            -> navigationPanel.checkNavigationPanelHeaderTexts(navigationPanel.navigationPanelHeaderTexts));
   }
 
   @Test
@@ -60,7 +56,6 @@ public class T1ConsultingTests extends TestBase {
     });
   }
 
-
   private static Stream<Arguments> checkPageHeader() {
     return Stream.of(
             Arguments.of("О компании", "О компании"),
@@ -75,12 +70,12 @@ public class T1ConsultingTests extends TestBase {
   @MethodSource("checkPageHeader")
   @ParameterizedTest(name = "Проверка кликабельности элемента страницы: {0}")
   void checkHeaderTextOnMainPages(String menuItem, String pageHeaderText) {
+
     step("Кликаем по элементу навигационной панели", ()
             -> navigationPanel.clickOnNavigationPanelElements(menuItem));
 
-    step("Проверяем заголовок открывшейся страницы", () -> {
-      $(".content h1").shouldHave(text(pageHeaderText));
-    });
+    step("Проверяем заголовок открывшейся страницы", ()
+            -> $(".content h1").shouldHave(text(pageHeaderText)));
   }
 
   @Owner("nkramar")
@@ -93,10 +88,11 @@ public class T1ConsultingTests extends TestBase {
           "Импортозамещение, Импортозамещение",
           "Цифровые решения, Цифровые решения",
           "Аналитика, Аналитика",
-          "BigData,BigData"
-  })
+          "BigData,BigData"})
+
   @ParameterizedTest(name = "Переход на страницу c услугой: {0}")
   void checkHeaderTextOnServicesPages(String menuItem, String pageHeader) {
+
     step("Наводим мышку на элемент навигационной панели 'Услуги'", ()
             -> navigationPanel.hoverNavigationPanelElement("Услуги"));
 
@@ -104,9 +100,7 @@ public class T1ConsultingTests extends TestBase {
             -> $(byLinkText(menuItem)).click());
 
     step("Проверяем заголовок открывшейся страницы", ()
-            -> { $(".content h1").shouldHave(text(pageHeader));
-    });
-
+            -> $(".content h1").shouldHave(text(pageHeader)));
   }
 }
 
