@@ -16,10 +16,16 @@ public class NavigationPanel {
 
 
   public void checkNavigationPanelHeaderTexts(String value) {
+
     navigationPanelHeader.shouldHave(exactText(value));
   }
 
   public void clickOnNavigationPanelElements(String value) {
+
     navigationPanelHeader.$(byText(value)).click();
   }
+
+  public void hoverNavigationPanelElement(String value) {
+    navigationPanelHeader.$(byText(value)).hover(); }
+
 }

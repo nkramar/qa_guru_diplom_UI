@@ -10,7 +10,9 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.MethodSource;
+
 import java.util.stream.Stream;
+
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byLinkText;
 import static com.codeborne.selenide.Selectors.byText;
@@ -74,8 +76,8 @@ public class T1ConsultingTests extends TestBase {
   @MethodSource("checkPageHeader")
   @ParameterizedTest(name = "Проверка кликабельности элемента страницы: {0}")
   void checkHeaderTextOnMainPages(String menuItem, String pageHeaderText) {
-    step("Кликаем по элементу навигационной панели",
-            () -> navigationPanel.clickOnNavigationPanelElements(menuItem));
+    step("Кликаем по элементу навигационной панели", ()
+            -> navigationPanel.clickOnNavigationPanelElements(menuItem));
 
     step("Проверяем заголовок открывшейся страницы", () -> {
       $(".content h1").shouldHave(text(pageHeaderText));
@@ -94,16 +96,18 @@ public class T1ConsultingTests extends TestBase {
           "Аналитика, Аналитика",
           "BigData,BigData"
   })
-  @ParameterizedTest( name = "Переход на страницу c услугой: {0}")
+  @ParameterizedTest(name = "Переход на страницу c услугой: {0}")
   void checkHeaderTextOnServicesPages(String menuItem, String pageHeader) {
-    step("Наводим мышку на элемент навигационной панели 'Услуги'",
-            () -> navigationPanel.navigationPanelHeader.$(byText("Услуги")).hover());
+    step("Наводим мышку на элемент навигационной панели 'Услуги'", ()
+            -> navigationPanel.hoverNavigationPanelElement("Услуги"));
 
-    step("Кликаем нанужный элемент в сплывающем меню", () -> $(byLinkText(menuItem)).click());
+    step("Кликаем нанужный элемент в сплывающем меню", ()
+            -> $(byLinkText(menuItem)).click());
 
-    step("Проверяем заголовок открывшейся страницы", () -> {
-      $(".content h1").shouldHave(text(pageHeader));
+    step("Проверяем заголовок открывшейся страницы", ()
+            -> { $(".content h1").shouldHave(text(pageHeader));
     });
+
   }
 }
 
