@@ -11,6 +11,7 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import pages.MainPage;
 import pages.NavigationPanel;
 import static com.codeborne.selenide.Selenide.closeWebDriver;
 import static org.openqa.selenium.logging.LogType.BROWSER;
@@ -18,6 +19,7 @@ import static org.openqa.selenium.logging.LogType.BROWSER;
 public class TestBase {
 
   NavigationPanel navigationPanel = new NavigationPanel();
+  MainPage mainPage = new MainPage();
   static HostConfig hostConfig = ConfigFactory.create(HostConfig.class, System.getProperties());
   static String baseUrl = hostConfig.getBaseUrl();
 

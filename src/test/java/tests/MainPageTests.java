@@ -11,8 +11,6 @@ import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.MethodSource;
 import java.util.stream.Stream;
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selectors.byLinkText;
 import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 import static org.assertj.core.api.Assertions.assertThat;
@@ -29,7 +27,7 @@ public class MainPageTests extends TestBase {
 
     step("Открываем главную страницу сайта", () -> open(baseUrl));
 
-    step("Проверить, что титульное название страницы содержит текст '«Т1 Консалтинг»'", () -> {
+    step("Проверяем, что титульное название страницы содержит текст '«Т1 Консалтинг»'", () -> {
       String expectedTitle = "«Т1 Консалтинг»";
       String actualTitle = title();
       assertThat(actualTitle).isEqualTo(expectedTitle);
@@ -86,7 +84,7 @@ public class MainPageTests extends TestBase {
             -> navigationPanel.clickOnNavigationPanelElements(menuItem));
 
     step("Проверяем заголовок открывшейся страницы", ()
-            -> $(".content h1").shouldHave(text(pageHeaderText)));
+            -> mainPage.checkHeaderText(pageHeaderText));
   }
 
   @Owner("nkramar")
@@ -110,10 +108,10 @@ public class MainPageTests extends TestBase {
             -> navigationPanel.hoverNavigationPanelElement("Услуги"));
 
     step("Кликаем нанужный элемент в сплывающем меню", ()
-            -> $(byLinkText(menuItem)).click());
+            -> mainPage.clickOnMenuItem(menuItem));
 
     step("Проверяем заголовок открывшейся страницы", ()
-            -> $(".content h1").shouldHave(text(pageHeader)));
+            -> mainPage.checkHeaderText(pageHeader));
   }
 }
 
