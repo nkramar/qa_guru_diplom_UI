@@ -17,7 +17,7 @@ import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class UIFunctionalityTests extends TestBase {
+public class MainPageTests extends TestBase {
 
   @Test
   @Tag("smoke")
