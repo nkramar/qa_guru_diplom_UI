@@ -42,7 +42,8 @@ public class MainPageTests extends TestBase {
   @DisplayName("Проверка видимости элементов в навигационной панели")
   void checkAvailabilityOfHeaderElementsTest() {
 
-    step("Открываем главную страницу сайта", () -> open(baseUrl));
+    step("Открываем главную страницу сайта", ()
+            -> open(baseUrl));
 
     step("Проверяем, что в навигационной панели отображаются текстовые элементы", ()
             -> navigationPanel.checkNavigationPanelHeaderTexts(navigationPanel.navigationPanelHeaderTexts));
