@@ -10,25 +10,16 @@ import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import pages.NavigationPanel;
-
-
 import static com.codeborne.selenide.Selenide.closeWebDriver;
-import static com.codeborne.selenide.Selenide.open;
-import static io.qameta.allure.Allure.step;
 import static org.openqa.selenium.logging.LogType.BROWSER;
-
 
 public class TestBase {
 
   NavigationPanel navigationPanel = new NavigationPanel();
-
   static HostConfig hostConfig = ConfigFactory.create(HostConfig.class, System.getProperties());
-
   static String baseUrl = hostConfig.getBaseUrl();
-
 
   @BeforeAll
   static void configure() {
@@ -43,18 +34,12 @@ public class TestBase {
     SelenideLogger.addListener("Allure Selenide", new AllureSelenide());
   }
 
-  @BeforeEach
-  public void openMainPage() {
-    step("Открываем главную страницу сайта", () -> open(baseUrl));
-  }
-
   @AfterEach
   void addAttach() {
     AllureAttachments.screenshotAs("Last screenshot");
     AllureAttachments.pageSource();
     AllureAttachments.browserConsoleLogs();
     AllureAttachments.addVideo();
-
   }
 
   @AfterAll
@@ -71,8 +56,6 @@ public class TestBase {
   }
 
   public static String getConsoleLogs() {
-
     return String.join("\n", Selenide.getWebDriverLogs(BROWSER));
   }
 }
-

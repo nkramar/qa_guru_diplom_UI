@@ -26,6 +26,9 @@ public class UIFunctionalityTests extends TestBase {
   @Story("Веб адрес страницы")
   @DisplayName("Проверка титульного названия страницы ")
   void checkTitleTest() {
+
+    step("Открываем главную страницу сайта", () -> open(baseUrl));
+
     step("Проверить, что титульное название страницы содержит текст '«Т1 Консалтинг»'", () -> {
       String expectedTitle = "«Т1 Консалтинг»";
       String actualTitle = title();
@@ -39,7 +42,10 @@ public class UIFunctionalityTests extends TestBase {
   @Story("Видимость текстовых элементов в навигационной панели")
   @DisplayName("Проверка видимости элементов в навигационной панели")
   void checkAvailabilityOfHeaderElementsTest() {
-    step("Проверить, что в навигационной панели отображаются текстовые элементы", ()
+
+    step("Открываем главную страницу сайта", () -> open(baseUrl));
+
+    step("Проверяем, что в навигационной панели отображаются текстовые элементы", ()
             -> navigationPanel.checkNavigationPanelHeaderTexts(navigationPanel.navigationPanelHeaderTexts));
   }
 
@@ -49,7 +55,10 @@ public class UIFunctionalityTests extends TestBase {
   @Story("Ошибки в логе консоли при работе сайта")
   @DisplayName("Проверка лога консоли страницы на наличие ошибок")
   void consoleShouldNotHaveErrorsTest() {
-    step("Проверить, что лог консоли не содержит текст: 'SEVERE'", () -> {
+
+    step("Открываем главную страницу сайта", () -> open(baseUrl));
+
+    step("Проверяем, что лог консоли не содержит текст: 'SEVERE'", () -> {
       String consoleLogs = getConsoleLogs();
       String errorText = "SEVERE";
       assertThat(consoleLogs).doesNotContain(errorText);
@@ -70,6 +79,8 @@ public class UIFunctionalityTests extends TestBase {
   @MethodSource("checkPageHeader")
   @ParameterizedTest(name = "Проверка кликабельности элемента страницы: {0}")
   void checkHeaderTextOnMainPages(String menuItem, String pageHeaderText) {
+
+    step("Открываем главную страницу сайта", () -> open(baseUrl));
 
     step("Кликаем по элементу навигационной панели", ()
             -> navigationPanel.clickOnNavigationPanelElements(menuItem));
@@ -92,6 +103,8 @@ public class UIFunctionalityTests extends TestBase {
 
   @ParameterizedTest(name = "Переход на страницу c услугой: {0}")
   void checkHeaderTextOnServicesPages(String menuItem, String pageHeader) {
+
+    step("Открываем главную страницу сайта", () -> open(baseUrl));
 
     step("Наводим мышку на элемент навигационной панели 'Услуги'", ()
             -> navigationPanel.hoverNavigationPanelElement("Услуги"));
