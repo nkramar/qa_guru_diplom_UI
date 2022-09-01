@@ -25,8 +25,8 @@ public class MainPageTests extends TestBase {
   @DisplayName("Проверка титульного названия страницы ")
   void checkTitleTest() {
 
-    step("Открываем главную страницу сайта", () 
-         -> open(baseUrl));
+    step("Открываем главную страницу сайта", ()
+            -> open(baseUrl));
 
     step("Проверяем, что титульное название страницы содержит текст '«Т1 Консалтинг»'", () -> {
       String expectedTitle = "«Т1 Консалтинг»";
@@ -55,8 +55,8 @@ public class MainPageTests extends TestBase {
   @DisplayName("Проверка лога консоли страницы на наличие ошибок")
   void consoleShouldNotHaveErrorsTest() {
 
-    step("Открываем главную страницу сайта", () 
-         -> open(baseUrl));
+    step("Открываем главную страницу сайта", ()
+            -> open(baseUrl));
 
     step("Проверяем, что лог консоли не содержит текст: 'SEVERE'", () -> {
       String consoleLogs = getConsoleLogs();
@@ -80,8 +80,8 @@ public class MainPageTests extends TestBase {
   @ParameterizedTest(name = "Проверка кликабельности элемента страницы: {0}")
   void checkHeaderTextOnMainPages(String menuItem, String pageHeaderText) {
 
-    step("Открываем главную страницу сайта", ()  
-           -> open(baseUrl));
+    step("Открываем главную страницу сайта", ()
+            -> open(baseUrl));
 
     step("Кликаем по элементу навигационной панели", ()
             -> navigationPanel.clickOnNavigationPanelElements(menuItem));
@@ -105,7 +105,7 @@ public class MainPageTests extends TestBase {
   @ParameterizedTest(name = "Переход на страницу c услугой: {0}")
   void checkHeaderTextOnServicesPages(String menuItem, String pageHeader) {
 
-    step("Открываем главную страницу сайта", () 
+    step("Открываем главную страницу сайта", ()
             -> open(baseUrl));
 
     step("Наводим мышку на элемент навигационной панели 'Услуги'", ()
