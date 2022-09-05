@@ -92,7 +92,7 @@ public class MainPageTests extends TestBase {
           "Импортозамещение, Импортозамещение",
           "Цифровые решения, Цифровые решения",
           "Аналитика, Аналитика",
-          "BigData,BigData"})
+          "BigData, BigData"})
 
   @ParameterizedTest(name = "Переход на страницу c услугой: {0}")
   void checkHeaderTextOnServicesPages(String menuItem, String pageHeader) {
