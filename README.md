@@ -1,5 +1,5 @@
 
-<h2 align="center"> UI проект для сайта компании
+<h2 align="center"> Дипломный UI проект по тестированию сайта компании
 <a target="_blank" href="https://www.t1-consulting.ru">Т1 Консалтинг</a> </h2>
 
 <p align="center">
