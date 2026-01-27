@@ -1,6 +1,6 @@
 
-<h2 align="center"> UI проект по автоматизации тестирования для сайта компании 
-  <a target="_blank" href="https://www.t1-consulting.ru">Т1 Консалтинг</a> </h2>
+<h2 align="center"> UI проект по автоматизации тестирования для сайта компании </h2>
+  </h2> <a target="_blank" href="https://www.t1-consulting.ru">Т1 Консалтинг</a> </h2>
 
 <p align="center">
 <img title="Т1 Консалтинг" src="images/T1-Consulting.png">
